@@ -7,7 +7,7 @@ namespace sBlog.Net.Mod.Counter
     {
          public static bool IsRequestConsideredForCounts(this string url)
          {
-             var postRegex = new Regex(@"(\/\d+\/\d+)(\/\S+)");
+             var postRegex = new Regex(@"(\/\d+\/\d+)(\/\S+)(\/comment\-\S+)*");
 
              if (postRegex.IsMatch(url))
                  return true;

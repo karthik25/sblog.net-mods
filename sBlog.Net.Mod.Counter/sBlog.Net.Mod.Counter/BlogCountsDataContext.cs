@@ -1,5 +1,4 @@
-﻿using System;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 
 namespace sBlog.Net.Mod.Counter
 {
@@ -18,11 +17,6 @@ namespace sBlog.Net.Mod.Counter
         {
             Requests.Add(request);
             SaveChanges();
-        }
-
-        public int GetCountsByUrl(string url, short entryType = 1)
-        {
-            throw new NotImplementedException();
         }
     }
 }

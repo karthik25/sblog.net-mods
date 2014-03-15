@@ -20,6 +20,8 @@ namespace sBlog.Net.Mod.Counter
         void context_BeginRequest(object sender, EventArgs e)
         {
             var context = (HttpApplication) sender;
+            if (!context.Request.RawUrl.IsRequestConsideredForCounts())
+                return;            
             var request = new Request
                 {
                     RelativeUrl = context.Request.RawUrl,

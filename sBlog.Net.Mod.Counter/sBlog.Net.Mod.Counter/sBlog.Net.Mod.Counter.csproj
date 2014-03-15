@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BlogCounterModule.cs" />
+    <Compile Include="BlogCounterStaticHelpers.cs" />
     <Compile Include="BlogCountsDataContext.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

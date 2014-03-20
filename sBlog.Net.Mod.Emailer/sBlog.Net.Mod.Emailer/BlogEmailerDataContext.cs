@@ -1,5 +1,5 @@
-﻿using System;
-using System.Data.Entity;
+﻿using System.Data.Entity;
+using System.Linq;
 
 namespace sBlog.Net.Mod.Emailer
 {
@@ -13,14 +13,23 @@ namespace sBlog.Net.Mod.Emailer
             
         }
 
-        public string GetUrlForPost()
+        public string GetUrlForPost(string authority, string url)
         {
-            throw new NotImplementedException();
+            var post = _posts.ToList().SingleOrDefault(p => p.PostUrl == url && p.EntryType == 1);
+            if (post != null)
+            {
+                return string.Format(@"http://{0}/{1}/{2}/{3}", authority, 
+                                                                post.PostAddedDate.Year, 
+                                                                post.PostAddedDate.Month.ToString("00"), 
+                                                                post.PostUrl);
+            }
+            return null;
         }
 
-        public string GetUrlForPage()
+        public string GetUrlForPage(string authority, string url)
         {
-            throw new NotImplementedException();
+            var page = _posts.ToList().SingleOrDefault(p => p.PostUrl == url && p.EntryType == 2);
+            return page != null ? string.Format("http://{0}/page/{1}", authority, url) : null;
         }
     }
 }

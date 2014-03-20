@@ -11,7 +11,7 @@ Here are the steps to enable the use of the counter module.
 * Go to the file system that has the "bin" folder, then depending on the configuration (debug | release), identify the folder and open it
 * Now copy the sBlog.Net.Mod.Counter.dll and paste it inside the bin folder of your sBlog.Net project
 
-To enable this module, open the web.config file of sBlog.Net and just before </system.web> add the following
+To enable this module, open the web.config file of sBlog.Net and just before &lt;/system.web&gt; add the following
 
 ```xml
 <httpModules>
